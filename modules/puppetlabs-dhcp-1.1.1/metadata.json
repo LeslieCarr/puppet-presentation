@@ -1,0 +1,44 @@
+{
+  "name": "puppetlabs-dhcp",
+  "version": "1.1.1",
+  "source": "git://github.com/puppetlabs/puppetlabs-dhcp.git",
+  "author": "puppetlabs",
+  "license": "Apache License Version 2.0",
+  "summary": "Manage the ISC DHCP Daemon",
+  "description": "A Puppet module to deploy and manage the ISC DHCP server.",
+  "project_page": "https://github.com/puppetlabs/puppet-dhcp",
+  "dependencies": [
+    {
+      "name": "ripienaar/concat",
+      "version_requirement": ">= 0.1.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Modulefile": "26ec1a0447147f6532a1499fcbf66f55",
+    "README.md": "b965b201bafc12c3ac9a9a8878cff70e",
+    "files/dhcpd.hosts": "f3be005eb6404e8e97be43fd63720af4",
+    "files/dhcpd.pools": "461545f7d46e5dc0e1e6f9bdfad32d1d",
+    "manifests/ddns.pp": "89dec6fce97e910ff95841ff7bd4c766",
+    "manifests/debian.pp": "9a0884400032325e064ed71cd81a7b69",
+    "manifests/disable.pp": "468e9c6d23638fdb9e7cdf54d51ee755",
+    "manifests/failover.pp": "65ae164d9a9b868f6101dc89416bbb79",
+    "manifests/host.pp": "e3fef81f38aec5beeb3ea7bd728fed9b",
+    "manifests/init.pp": "9bfc81e45c305fe7e847893fd0e22783",
+    "manifests/monitor.pp": "863a0c4315b0bdd156f1fe0bc7fdf579",
+    "manifests/params.pp": "375dbdb1e39431ab0350f30a91c4ec1e",
+    "manifests/pool.pp": "ebb7f7b8af12b012e27d60df69fe85a2",
+    "templates/debian/default_isc-dhcp-server": "4c030226107774becb8928809749ebfd",
+    "templates/dhcpd.conf-extra.erb": "8ff1ad5e10c1dd54fdf92d622462749a",
+    "templates/dhcpd.conf-header.erb": "7a245701d4dcb65a9356c85a21f180b8",
+    "templates/dhcpd.conf.ddns.erb": "f7e66f80604a8883b8c890b2576b4941",
+    "templates/dhcpd.conf.failover.erb": "c5031465658fc6c6bc024c0de0c677cf",
+    "templates/dhcpd.conf.pxe.erb": "66dae406a87bf8370fd74f0d54c9dd03",
+    "templates/dhcpd.host.erb": "328b30ec8ea387512fb25c1282adbe72",
+    "templates/dhcpd.pool.erb": "8209c02fb07ce06a41d963c49a95c877",
+    "tests/init.pp": "61e295c72a3806e1af23eb53b41e0888",
+    "tests/master.pp": "4b5e227dbf0952ddb3e3f41e892c9c08"
+  }
+}
