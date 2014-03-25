@@ -4,7 +4,7 @@
 #
 # === Examples
 # TBD (see a pattern?)
-# 
+#
 # === Authors
 # Leslie Carr <geekgirl@gmail.com>
 #
@@ -20,21 +20,21 @@ class quagga {
   service { 'quagga':
     ensure      => running,
     hasrestart  => true,
-    hasstatus   => false, 
+    hasstatus   => false,
     enable      => true,
   }
-  
+
   file { '/etc/quagga/Quagga.conf':
-    mode        => 0644,
+    mode        => '0644',
     owner       => 'quagga',
     group       => 'quagga',
-    content     => template("quagga/Quagga.conf.erb"),
+    content     => template('quagga/Quagga.conf.erb'),
   }
-  
+
   file { '/etc/quagga/daemons':
-    mode        => 0644,
+    mode        => '0644',
     owner       => 'quagga',
     group       => 'quagga',
-    content     => template("quagga/daemons.erb")
+    content     => template('quagga/daemons.erb')
   }
 }
