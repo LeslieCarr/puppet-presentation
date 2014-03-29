@@ -10,8 +10,16 @@
 #
 # === License
 # GPL v3
-class quagga {
-
+class quagga(
+$zebra  = false,
+$bgpd   = false,
+$ospfd  = false,
+$ospf6d = false,
+$ripd   = false,
+$ripngd = false,
+$isisd  = false,
+$babeld = false)
+{
   package { 'quagga':
     ensure      => present,
     before      => Service['quagga']
