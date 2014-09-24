@@ -1,0 +1,49 @@
+auto lo
+iface lo inet loopback
+<% if @int_loopback -%>
+    address <%= int_loopback %>
+    netmask 255.255.255.255
+<% end -%>
+
+auto eth0
+iface eth0 inet dhcp
+
+<% if @int_unnumbered -%>
+# unnumbered interfaces
+<% @int_unnumbered.each do |val| -%>
+auto <%= val %>
+iface <%= val %> inet static
+    address <%= int_loopback %>
+    netmask 255.255.255.255
+
+<% end -%>
+<% else %>
+# no unnumbered interfaces
+<% end -%>
+
+<% if @int_layer3 %>
+# l3 interfaces
+<% int_layer3.each_pair do |key, value_hash| %>
+auto <%= key %>
+iface <%= key %> inet static
+    address <%= value_hash['address'] %>
+    netmask <%= value_hash['netmask'] %>
+
+<% end %>
+<% else %>
+# no l3 interfaces
+<% end %>
+
+<% if int_bridges %>
+# bridges
+<% int_bridges.each_pair do |key, value_hash| %>
+auto <%= key %>
+iface <%= key %> inet static
+    address <%= value_hash['address'] %>
+    netmask <%= value_hash['netmask'] %>
+    bridge_ports <% value_hash['members'].each do |val| -%><%= val%> <% end -%>
+
+<% end %>
+<% else %>
+# no bridges
+<% end %>
